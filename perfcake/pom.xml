@@ -427,6 +427,7 @@
                <systemPropertyVariables>
                   <log4j.skipJansi>true</log4j.skipJansi>
                </systemPropertyVariables>
+               <argLine>-Xmx128m</argLine>
             </configuration>
          </plugin>
          <plugin>
