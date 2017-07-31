@@ -12,7 +12,7 @@ export PING_LOOP_PID=$!
 # My build is using maven, but you could build anything with this, E.g.
 mvn -l maven.log install site assembly:single javadoc:javadoc -PallTests
 
-if [[ $? -ne 0]];
+if [[ $? -ne 0 ]];
 then
 	tail -c 2M maven.log;
 fi
