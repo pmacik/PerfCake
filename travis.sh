@@ -1,6 +1,6 @@
 #!/bin/bash
 # Abort on Error
-set -e
+#set -e
 
 export PING_SLEEP=30s
 export MAVEN_OPTS="-Xmx326m"; 
