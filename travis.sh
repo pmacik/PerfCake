@@ -3,6 +3,7 @@
 set -e
 
 export PING_SLEEP=30s
+export MAVEN_OPTS="-Xmx326m"; 
 
 # Set up a repeating loop to send some output to Travis.
 bash -c "while true; do echo \$(date) - building ...; sleep $PING_SLEEP; done" &
