@@ -15,5 +15,5 @@ deploy:
   overwrite: true
   skip_cleanup: true
   on:
-    repo: PerfCake/PerfCake
+    repo: pmacik/PerfCake
     tags: true
