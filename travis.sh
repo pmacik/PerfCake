@@ -10,7 +10,8 @@ bash -c "while true; do echo \$(date) - building ...; sleep $PING_SLEEP; done" &
 export PING_LOOP_PID=$!
 
 # My build is using maven, but you could build anything with this, E.g.
-mvn -l maven.log install site assembly:single javadoc:javadoc -PallTests
+#mvn -l maven.log install site assembly:single javadoc:javadoc -PallTests
+mvn -l maven.log install site assembly:single javadoc:javadoc -DskipTests
 
 maven_exit=$?
 if [[ $maven_exit -ne 0 ]];
