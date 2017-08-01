@@ -3,15 +3,14 @@
 #set -e
 
 export PING_SLEEP=30s
-export MAVEN_OPTS="-Xmx326m"; 
+export MAVEN_OPTS="-Xmx326m -Dmaven.test.failure.ignore=true";
 
 # Set up a repeating loop to send some output to Travis.
 bash -c "while true; do echo \$(date) - building ...; sleep $PING_SLEEP; done" &
 export PING_LOOP_PID=$!
 
 # My build is using maven, but you could build anything with this, E.g.
-#mvn -l maven.log install site assembly:single javadoc:javadoc -PallTests
-mvn -l maven.log install site assembly:single javadoc:javadoc -DskipTests
+mvn -l maven.log install site assembly:single javadoc:javadoc -PallTests
 
 maven_exit=$?
 if [[ $maven_exit -ne 0 ]];
