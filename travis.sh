@@ -2,6 +2,11 @@
 # Abort on Error
 #set -e
 
+if [ -z $TRAVIS_TAG]; then
+	echo "TRAVIS_TAG variable not set! Skipping..."
+	exit 0;
+fi
+
 #export PING_SLEEP=30s
 export MAVEN_OPTS="-Xmx326m";
 
