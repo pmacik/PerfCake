@@ -11,9 +11,9 @@ export MAVEN_OPTS="-Xmx326m";
 
 # My build is using maven, but you could build anything with this, E.g.
 
-#mvn install -DskipTests
-#mvn -pl perfcake package assembly:single -DskipTests
-#mvn -pl perfcake-agent package assembly:single -DskipTests
+mvn install -DskipTests
+mvn -pl perfcake package assembly:single -DskipTests
+mvn -pl perfcake-agent package assembly:single -DskipTests
 
 export PCV=`echo $TRAVIS_TAG | cut -d'v' -f2`
 
