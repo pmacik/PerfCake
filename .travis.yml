@@ -7,8 +7,12 @@ deploy:
   api_key:
     secure: ccIrq/98NbS2auxlqq9BQw2tAHz797NggcTlOsWAqC6WsLCVgHnBGZ+eTuWcxG/2wAlKILhY3Ug3fFZ8Pv9QQf7+mdWKHZ/nj4kOGY5Yqo4PHCGkWiEXSaJm78KO0u1NZLcaLUhAWYL3SwOdSOlnVhO5qrstfRyLzdruv9HmyaCKdiSUaDROlRszm3DWvXFXo++fh2G4ZAeVYWgl0F6MZfcj9Dy+6IeOYvrqY3bU8+20Pf5dSeTHHrRG0EnLuZVDjfxX9cgc3hAhoAgBEwRwdcPEaRoBsez/8uQM7KNh1FbW6AXym9QugcXWecCLVdVgkSZOGS2pXSTa9VrI2RSmZYvbliqRbiySznl9MLDOJuWsFwZjeZKdeBE8Py9eZVu+uMIsUU82fqNKahlgKcL5cLC15aEVczaSc46Ir3UWWrNj8RHVMmcxrTALuCIUrnfpqMSV0jzKEcM6SqjOQ/HKhhVawkZaRmT1T8pG4CfbR7meXWQOOxo+fQiHZfNqc+nIdINcQkcuvE1pSoKPNTVNm3jLUIvkl6p9tkzIyu5rXE6PnU1s1MHhCsRvwuhlJLq/DFM4bGMLdoUHRi9wXuWOZo5vHmMJe5QF+fHT2cwbZ0gmSPikIaWCQ6W1wLSPemJ2UEv5V/r3wVp1Dp7qqT71BdYHW4JNS/TCWa1aSSbdFj0=
   file:
-    - perfcake/target/*.zip
-    - perfcake-agent/target/*.zip
+    - perfcake-$TRAVIS_TAG-bin.zip
+    - perfcake-$TRAVIS_TAG-bin.tar.gz
+    - perfcake-$TRAVIS_TAG-bin.tar.bz2
+    - perfcake-agent-$TRAVIS_TAG-bin-agent.zip
+    - perfcake-agent-$TRAVIS_TAG-bin-agent.tar.gz
+    - perfcake-agent-$TRAVIS_TAG-bin-agent.tar.bz2
   overwrite: true
   skip_cleanup: true
   on:

@@ -10,7 +10,14 @@ export MAVEN_OPTS="-Xmx326m -Dmaven.test.failure.ignore=true";
 #export PING_LOOP_PID=$!
 
 # My build is using maven, but you could build anything with this, E.g.
+
 mvn package assembly:single -DskipTests
+cp -vf ./perfcake/target/perfcake-$TRAVIS_TAG-bin.zip .
+cp -vf ./perfcake/target/perfcake-$TRAVIS_TAG-bin.tar.gz .
+cp -vf ./perfcake/target/perfcake-$TRAVIS_TAG-bin.tar.bz2 .
+cp -vf ./perfcake-agent/target/perfcake-agent-$TRAVIS_TAG-bin-agent.zip .
+cp -vf ./perfcake-agent/target/perfcake-agent-$TRAVIS_TAG-bin-agent.tar.gz .
+cp -vf ./perfcake-agent/target/perfcake-agent-$TRAVIS_TAG-bin-agent.tar.bz2 .
 
 #maven_exit=$?
 #if [[ $maven_exit -ne 0 ]];
