@@ -10,18 +10,12 @@ bash -c "while true; do echo \$(date) - building ...; sleep $PING_SLEEP; done" &
 export PING_LOOP_PID=$!
 
 # My build is using maven, but you could build anything with this, E.g.
-mvn -l maven.log install site assembly:single javadoc:javadoc -PallTests
+mvn -l maven.log package assembly:single -DskipTests
 
 maven_exit=$?
 if [[ $maven_exit -ne 0 ]];
 then
 	tail -c 2M maven.log;
-else
-	zip -9r site.zip perfcake/target/site;
-	zip -9r distro.zip perfcake/target/*tar* perfcake/target/*zip;
-	zip -9r distro-agent.zip perfcake-agent/target/*tar* perfcake-agent/target/*zip;
-	zip -9r javadoc.zip perfcake/target/site/apidocs;
-	zip -9r javadoc-agent.zip perfcake-agent/target/site/apidocs;
 fi
 
 # nicely terminate the ping output loop
