@@ -15,12 +15,14 @@ export MAVEN_OPTS="-Xmx326m";
 #mvn -pl perfcake package assembly:single -DskipTests
 #mvn -pl perfcake-agent package assembly:single -DskipTests
 
-cp -vf ./perfcake/target/perfcake-*-bin.zip perfcake-$TRAVIS_TAG-bin.zip
-cp -vf ./perfcake/target/perfcake-*-bin.tar.gz perfcake-$TRAVIS_TAG-bin.tar.gz
-cp -vf ./perfcake/target/perfcake-*-bin.tar.bz2 perfcake-$TRAVIS_TAG-bin.tar.bz2
-cp -vf ./perfcake-agent/target/perfcake-agent-*-bin-agent.zip perfcake-agent-$TRAVIS_TAG-bin.zip
-cp -vf ./perfcake-agent/target/perfcake-agent-*-bin-agent.tar.gz perfcake-agent-$TRAVIS_TAG-bin.tar.gz
-cp -vf ./perfcake-agent/target/perfcake-agent-*-bin-agent.tar.bz2 perfcake-agent-$TRAVIS_TAG-bin.tar.bz2
+export PCV=`echo $TRAVIS_TAG | cut -d'v' -f2`
+
+cp -vf ./perfcake/target/perfcake-$PCV-bin.zip perfcake-$TRAVIS_TAG-bin.zip
+cp -vf ./perfcake/target/perfcake-$PCV-bin.tar.gz perfcake-$TRAVIS_TAG-bin.tar.gz
+cp -vf ./perfcake/target/perfcake-$PCV-bin.tar.bz2 perfcake-$TRAVIS_TAG-bin.tar.bz2
+cp -vf ./perfcake-agent/target/perfcake-agent-$PCV-bin-agent.zip perfcake-agent-$TRAVIS_TAG-bin.zip
+cp -vf ./perfcake-agent/target/perfcake-agent-$PCV-bin-agent.tar.gz perfcake-agent-$TRAVIS_TAG-bin.tar.gz
+cp -vf ./perfcake-agent/target/perfcake-agent-$PCV-bin-agent.tar.bz2 perfcake-agent-$TRAVIS_TAG-bin.tar.bz2
 
 #maven_exit=$?
 #if [[ $maven_exit -ne 0 ]];
