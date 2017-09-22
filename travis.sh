@@ -15,7 +15,7 @@ mvn install -DskipTests
 mvn -pl perfcake package assembly:single -DskipTests
 mvn -pl perfcake-agent package assembly:single -DskipTests
 
-export PCV=`echo $TRAVIS_TAG | cut -d'v' -f2`
+export PCV=${TRAVIS_TAG#*v}
 
 cp -vf ./perfcake/target/perfcake-$PCV-bin.zip perfcake-$TRAVIS_TAG-bin.zip
 cp -vf ./perfcake/target/perfcake-$PCV-bin.tar.gz perfcake-$TRAVIS_TAG-bin.tar.gz
