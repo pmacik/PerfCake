@@ -11,18 +11,16 @@ export MAVEN_OPTS="-Xmx326m";
 
 # My build is using maven, but you could build anything with this, E.g.
 
-mvn install -DskipTests
-mvn -pl perfcake package assembly:single -DskipTests
-mvn -pl perfcake-agent package assembly:single -DskipTests
+#mvn install -DskipTests
+#mvn -pl perfcake package assembly:single -DskipTests
+#mvn -pl perfcake-agent package assembly:single -DskipTests
 
-export PERFCAKE_VERSION=`echo $TRAVIS_TAG | cut -d'v' -f 2`
-
-cp -vf ./perfcake/target/perfcake-$PERFCAKE_VERSION-bin.zip .
-cp -vf ./perfcake/target/perfcake-$PERFCAKE_VERSION-bin.tar.gz .
-cp -vf ./perfcake/target/perfcake-$PERFCAKE_VERSION-bin.tar.bz2 .
-cp -vf ./perfcake-agent/target/perfcake-agent-$PERFCAKE_VERSION-bin-agent.zip .
-cp -vf ./perfcake-agent/target/perfcake-agent-$PERFCAKE_VERSION-bin-agent.tar.gz .
-cp -vf ./perfcake-agent/target/perfcake-agent-$PERFCAKE_VERSION-bin-agent.tar.bz2 .
+cp -vf ./perfcake/target/perfcake-*-bin.zip .
+cp -vf ./perfcake/target/perfcake-*-bin.tar.gz .
+cp -vf ./perfcake/target/perfcake-*-bin.tar.bz2 .
+cp -vf ./perfcake-agent/target/perfcake-agent-*-bin-agent.zip .
+cp -vf ./perfcake-agent/target/perfcake-agent-*-bin-agent.tar.gz .
+cp -vf ./perfcake-agent/target/perfcake-agent-*-bin-agent.tar.bz2 .
 
 #maven_exit=$?
 #if [[ $maven_exit -ne 0 ]];
