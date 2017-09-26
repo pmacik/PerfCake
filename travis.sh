@@ -20,8 +20,6 @@ mvn install -DskipTests
 mvn -pl perfcake package javadoc:javadoc assembly:single -DskipTests
 mvn -pl perfcake-agent package javadoc:javadoc assembly:single -DskipTests
 
-exit 0
-
 export PCV=${TRAVIS_TAG#*v}
 
 cp -vf ./perfcake/target/perfcake-$PCV-bin.zip perfcake-$TRAVIS_TAG-bin.zip
